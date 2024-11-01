@@ -5,6 +5,15 @@ import (
 	"sort"
 )
 
+func CreateDefaultCoilWriteRequest(address int, value uint16) WriteRequest {
+	return &DefaultWriteRequest{
+		Type:    Coil,
+		Address: address,
+		Value:   getCoilRealValue(value),
+		Reset:   true,
+	}
+}
+
 func CalculateAddressRange(addresses []int) (lowerAddress, upperAddress int) {
 	if len(addresses) == 0 {
 		return
