@@ -9,7 +9,7 @@ func CreateDefaultCoilWriteRequest(address int, value uint16) WriteRequest {
 	return &DefaultWriteRequest{
 		Type:    Coil,
 		Address: address,
-		Value:   getCoilRealValue(value),
+		Value:   value,
 		Reset:   true,
 	}
 }
